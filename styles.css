@@ -33,6 +33,14 @@ body {
 img { max-width: 100%; display: block; }
 a, button { font-family: inherit; }
 
+.hero-name {
+  margin-bottom: 18px;
+  color: var(--ink);
+  font-size: clamp(22px, 2vw, 32px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
 .ambient {
   position: fixed;
   width: 34rem;

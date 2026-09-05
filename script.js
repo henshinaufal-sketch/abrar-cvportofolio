@@ -3,6 +3,8 @@ const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
 
 $('#eyebrow').textContent = d.eyebrow;
+$('#profileName').textContent = d.name;
+$('#profileDegree').textContent = d.degree;
 $('#headline').textContent = d.headline;
 $('#intro').textContent = d.intro;
 $('#researchStatement').textContent = d.researchStatement;
