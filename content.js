@@ -9,7 +9,7 @@ window.PORTFOLIO = {
   degree: "S.T.",
   eyebrow: "GEOLOGICAL ENGINEERING • MINISTRY OF VILLAGES AND DEVELOPMENT OF DISADVANTED REGIONS • DATA AND INFORMATION CENTER",
   headline: "Turning spatial data into better decisions for Indonesia's villages.",
-  intro: "Geospatial and government data practitioner working at the intersection of GIS, village information systems, climate & disaster risk, and evidence-based rural development.",
+  intro: "Abrar is a geospatial and government data practitioner working at the intersection of GIS, village information systems, climate & disaster risk, and evidence-based rural development.",
   location: "Jakarta, Indonesia",
   email: "abrarnaufalprasetya@gmail.com",
   linkedin: "https://linkedin.com/in/abrar-naufal-prasetya-367b75161",
