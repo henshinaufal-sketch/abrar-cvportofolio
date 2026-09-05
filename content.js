@@ -7,7 +7,7 @@
 window.PORTFOLIO = {
   name: "Abrar Naufal Prasetya",
   degree: "S.T.",
-  eyebrow: "GEOSPATIAL • VILLAGE DATA • PUBLIC SECTOR",
+  eyebrow: "GEOLOGICAL ENGINEERING • MINISTRY OF VILLAGES AND DEVELOPMENT OF DISADVANTED REGIONS • DATA AND INFORMATION CENTER",
   headline: "Turning spatial data into better decisions for Indonesia's villages.",
   intro: "Geospatial and government data practitioner working at the intersection of GIS, village information systems, climate & disaster risk, and evidence-based rural development.",
   location: "Jakarta, Indonesia",
