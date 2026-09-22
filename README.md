@@ -13,10 +13,11 @@ A local URL such as `http://127.0.0.1:5500/` should open in your browser.
 
 ## File structure
 
-- `index.html` — page structure, dashboard navigation panel, lightbox markup, SEO/social meta tags
-- `styles.css` — visual design, blue theme, layout, navigation, lightbox, responsive styles
+- `index.html` — page structure, dashboard navigation panel, lightbox and mini-game markup, SEO/social meta tags
+- `styles.css` — visual design (geology/GIS "rock strata" theme), layout, navigation, lightbox, mini-game, responsive styles
 - `content.js` — portfolio text/content, social URLs, and image references
 - `script.js` — renders content and controls navigation + gallery lightbox
+- `game.js` — "Stack the Strata" mini-game, opened from the footer's Play button
 - `assets/images/` — portfolio photos and project screenshots (WebP)
 - `assets/meta/` — favicon, app icons, and the Open Graph/Twitter share image
 - `assets/Abrar-Naufal-Prasetya-CV.pdf` — downloadable CV, linked from the hero section
@@ -27,7 +28,11 @@ A local URL such as `http://127.0.0.1:5500/` should open in your browser.
 
 Most text and links can be edited from `content.js` without changing the layout. If you update career/education/highlights, re-run `python3 scripts/generate_cv_pdf.py` (requires `pip install reportlab`) to keep the downloadable CV in sync.
 
-## Current revision notes — v0.6
+## Current revision notes — v0.7
+
+- Added a "Stack the Strata" mini-game (a Stack-style block-stacking game themed on the site's rock-strata palette), opened from a "Play mini-game" button in the footer.
+
+## Previous revision notes — v0.6
 
 - Compressed all photos to WebP (~65% smaller) and added explicit `width`/`height` to every `<img>` to avoid layout shift.
 - Added Open Graph/Twitter Card meta tags, favicon/app icons, `<link rel="canonical">`, `robots.txt`, and `sitemap.xml`.

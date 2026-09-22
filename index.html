@@ -190,6 +190,7 @@
       </div>
       <footer>
         <span id="footerName"></span>
+        <button id="gamePlayBtn" class="game-trigger" type="button">▶ Play mini-game</button>
         <span id="footerYear">Static portfolio</span>
       </footer>
     </section>
@@ -212,7 +213,30 @@
     </div>
   </div>
 
+  <div id="gameModal" class="game-modal" role="dialog" aria-modal="true" aria-labelledby="gameTitle" aria-hidden="true">
+    <div class="game-panel">
+      <button id="gameClose" class="game-close" type="button" aria-label="Close mini-game">×</button>
+      <div class="game-head">
+        <span class="game-kicker">Mini-game</span>
+        <h2 id="gameTitle">Stack the Strata</h2>
+        <p class="game-sub">Drop each moving layer onto the column below. Click, tap, or press space to drop — miss the edge and the column collapses.</p>
+      </div>
+      <div class="game-stage">
+        <canvas id="gameCanvas" aria-label="Stack the Strata game area" role="img"></canvas>
+        <div id="gameOverlay" class="game-overlay show">
+          <p id="gameOverlayText">Click to drop the first layer</p>
+          <button id="gameOverlayBtn" class="btn primary" type="button">Start</button>
+        </div>
+      </div>
+      <div class="game-stats">
+        <span>Height <strong id="gameScore">0</strong></span>
+        <span>Best <strong id="gameBest">0</strong></span>
+      </div>
+    </div>
+  </div>
+
   <script src="content.js"></script>
   <script src="script.js"></script>
+  <script src="game.js"></script>
 </body>
 </html>
