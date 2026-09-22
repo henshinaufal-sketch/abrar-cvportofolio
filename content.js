@@ -50,8 +50,10 @@ window.PORTFOLIO = {
       title: "Village Spatial Data — WebGIS IRID Prototype",
       text: "A learning-oriented Mapbox/GIS prototype to visualize village-level climate risk index data and status, while preparing a broader research direction for integrating spatial village data with the Village Information System.",
       tags: ["Mapbox", "WebGIS", "Village Data", "Climate Risk"],
-      image: "assets/images/webgis-irid.png",
-      imageAlt: "WebGIS prototype visualizing Village Climate Risk Index across villages in East Sumba"
+      image: "assets/images/webgis-irid.webp",
+      imageAlt: "WebGIS prototype visualizing Village Climate Risk Index across villages in East Sumba",
+      imageWidth: 1887,
+      imageHeight: 894
     },
     {
       year: "2025—Present",
@@ -59,8 +61,10 @@ window.PORTFOLIO = {
       title: "Spatial Data & Application Support",
       text: "Supporting data access services, thematic mapping, application planning, system testing, and coordination with third-party developers for ministry-level information systems.",
       tags: ["GIS", "Data Services", "System Testing", "Government"],
-      image: "assets/images/presentation-idesa.jpg",
-      imageAlt: "Panel discussion on the iDesa data ecosystem"
+      image: "assets/images/presentation-idesa.webp",
+      imageAlt: "Panel discussion on the iDesa data ecosystem",
+      imageWidth: 1920,
+      imageHeight: 1080
     },
     {
       year: "2022—2025",
@@ -68,8 +72,10 @@ window.PORTFOLIO = {
       title: "Disaster Resilience Policy Brief Support",
       text: "Contributed to policy-brief development on disaster resilience, mitigation, and disadvantaged-region development, including field-based information gathering and stakeholder discussions in East Nusa Tenggara.",
       tags: ["Policy", "Disaster Resilience", "Field Research"],
-      image: "assets/images/work-coordination.jpg",
-      imageAlt: "Coordination visit with disaster management stakeholders"
+      image: "assets/images/work-coordination.webp",
+      imageAlt: "Coordination visit with disaster management stakeholders",
+      imageWidth: 1920,
+      imageHeight: 1080
     }
   ],
 
@@ -99,60 +105,76 @@ window.PORTFOLIO = {
 
   gallery: [
     {
-      image: "assets/images/college-field-mapping-outcrop.jpeg",
+      image: "assets/images/college-field-mapping-outcrop.webp",
       alt: "Geological field mapping activity during university",
       eyebrow: "COLLEGE LIFE",
       title: "Geological field mapping",
-      note: "Field observation and measurement as part of Geological Engineering training."
+      note: "Field observation and measurement as part of Geological Engineering training.",
+      imageWidth: 960,
+      imageHeight: 540
     },
     {
-      image: "assets/images/college-field-mapping-vertical.jpg",
+      image: "assets/images/college-field-mapping-vertical.webp",
       alt: "Group of geological engineering students during field mapping",
       eyebrow: "COLLEGE LIFE",
       title: "Learning terrain in the field",
-      note: "Building the field intuition behind later geospatial and terrain interpretation work."
+      note: "Building the field intuition behind later geospatial and terrain interpretation work.",
+      imageWidth: 540,
+      imageHeight: 960
     },
     {
-      image: "assets/images/work-outcrop-visit.jpg",
+      image: "assets/images/work-outcrop-visit.webp",
       alt: "Field visit to an exposed geological landscape",
       eyebrow: "WORK LIFE",
       title: "Back to the outcrop",
-      note: "Field observation remains an important bridge between maps, data, and real landscapes."
+      note: "Field observation remains an important bridge between maps, data, and real landscapes.",
+      imageWidth: 1920,
+      imageHeight: 1080
     },
     {
-      image: "assets/images/work-salt.jpg",
+      image: "assets/images/work-salt.webp",
       alt: "Salt crystals held above a salt production area",
       eyebrow: "WORK LIFE",
       title: "Local resources & livelihoods",
-      note: "A field perspective on natural resources and rural economic activity."
+      note: "A field perspective on natural resources and rural economic activity.",
+      imageWidth: 1080,
+      imageHeight: 1920
     },
     {
-      image: "assets/images/seminar-china.jpg",
+      image: "assets/images/seminar-china.webp",
       alt: "International capacity-building seminar in China",
       eyebrow: "2025 • BEIJING",
       title: "International capacity building",
-      note: "Indonesian Agricultural and Rural Development Officials Capacity Building Workshop."
+      note: "Indonesian Agricultural and Rural Development Officials Capacity Building Workshop.",
+      imageWidth: 1440,
+      imageHeight: 1920
     },
     {
-      image: "assets/images/host-experience.jpg",
+      image: "assets/images/host-experience.webp",
       alt: "Event poster showing Abrar as a host for a civil servant management discussion",
       eyebrow: "COMMUNICATION",
       title: "Hosting & public outreach",
-      note: "Communicating public-sector topics beyond technical and analytical work."
+      note: "Communicating public-sector topics beyond technical and analytical work.",
+      imageWidth: 1535,
+      imageHeight: 1920
     },
     {
-      image: "assets/images/presentation-1.jpg",
+      image: "assets/images/presentation-1.webp",
       alt: "Abrar speaking during a presentation",
       eyebrow: "PRESENTATION",
       title: "Turning analysis into a story",
-      note: "Presenting data, policy, and technical topics for internal and executive discussions."
+      note: "Presenting data, policy, and technical topics for internal and executive discussions.",
+      imageWidth: 539,
+      imageHeight: 357
     },
     {
-      image: "assets/images/college-field-mapping-group.jpg",
+      image: "assets/images/college-field-mapping-group.webp",
       alt: "Geological engineering field mapping group",
       eyebrow: "COLLEGE LIFE",
       title: "Field mapping team",
-      note: "One of the experiences that shaped an enduring interest in spatial thinking."
+      note: "One of the experiences that shaped an enduring interest in spatial thinking.",
+      imageWidth: 960,
+      imageHeight: 540
     }
   ],
 

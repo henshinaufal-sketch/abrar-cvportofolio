@@ -10,6 +10,7 @@ $('#intro').textContent = d.intro;
 $('#researchStatement').textContent = d.researchStatement;
 $('#social').textContent = d.social;
 $('#footerName').textContent = `${d.name.toUpperCase()} — ${d.location.toUpperCase()}`;
+$('#footerYear').textContent = `Static portfolio — ${new Date().getFullYear()}`;
 $('#emailLink').href = `mailto:${d.email}`;
 $('#linkedinLink').href = d.linkedin;
 $('#socialLink').href = d.socialUrl || 'https://tiktok.com/@asnmedioker';
@@ -32,7 +33,7 @@ $('#focus').innerHTML = d.focus.map((item) => `
 $('#projectsGrid').innerHTML = d.projects.map((item) => `
   <article class="project">
     <figure class="project-media">
-      <img src="${item.image}" alt="${item.imageAlt}" loading="lazy" />
+      <img src="${item.image}" alt="${item.imageAlt}" width="${item.imageWidth}" height="${item.imageHeight}" loading="lazy" />
     </figure>
     <div class="project-body">
       <div class="project-meta">
@@ -61,7 +62,7 @@ $('#skills').innerHTML = d.skills.map((skill) => `<span class="skill">${skill}</
 $('#gallery').innerHTML = d.gallery.map((item, index) => `
   <figure class="gallery-card">
     <button class="gallery-image-button" type="button" data-gallery-index="${index}" aria-label="Open ${item.title} photo">
-      <span class="gallery-image"><img src="${item.image}" alt="${item.alt}" loading="lazy" /></span>
+      <span class="gallery-image"><img src="${item.image}" alt="${item.alt}" width="${item.imageWidth}" height="${item.imageHeight}" loading="lazy" /></span>
       <span class="gallery-view-hint" aria-hidden="true"><span>View photo</span><b>↗</b></span>
     </button>
     <figcaption>
@@ -80,6 +81,26 @@ $('#education').innerHTML = `
 `;
 
 $('#highlights').innerHTML = d.highlights.map((item) => `<li>${item}</li>`).join('');
+
+// Focus trap helper for the nav panel and lightbox overlays.
+function focusableElements(container) {
+  return [...container.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')]
+    .filter((el) => el.offsetParent !== null);
+}
+
+function trapTabKey(container, event) {
+  const focusable = focusableElements(container);
+  if (!focusable.length) return;
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault();
+    last.focus();
+  } else if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault();
+    first.focus();
+  }
+}
 
 // Dashboard-style section navigation.
 const menuToggle = $('#menuToggle');
@@ -137,6 +158,8 @@ function openLightbox(index, trigger) {
   lightbox.classList.add('open');
   lightbox.setAttribute('aria-hidden', 'false');
   document.body.classList.add('lightbox-open');
+  // visibility only becomes "visible" once the "open" class is applied, so
+  // focus() must be deferred or the browser silently drops it.
   lightboxClose.focus();
 }
 
@@ -164,6 +187,14 @@ document.addEventListener('keydown', (event) => {
     } else if (menuIsOpen) {
       setMenu(false);
       menuToggle.focus();
+    }
+  }
+
+  if (event.key === 'Tab') {
+    if (lightbox.classList.contains('open')) {
+      trapTabKey(lightbox, event);
+    } else if (menuIsOpen) {
+      trapTabKey(navPanel, event);
     }
   }
 
