@@ -14,11 +14,11 @@ from reportlab.platypus import (
 )
 from reportlab.lib.styles import ParagraphStyle
 
-INK = HexColor("#0b173a")
-INK_SOFT = HexColor("#26395f")
-MUTED = HexColor("#637293")
-BLUE = HexColor("#2764ff")
-LINE = HexColor("#c6d5f5")
+INK = HexColor("#2b2418")
+INK_SOFT = HexColor("#5a5344")
+MUTED = HexColor("#7a7057")
+ACCENT = HexColor("#a6512c")
+LINE = HexColor("#d8c9ae")
 
 OUTPUT_PATH = "assets/Abrar-Naufal-Prasetya-CV.pdf"
 
@@ -38,7 +38,7 @@ name_style = ParagraphStyle(
     leading=23, spaceAfter=1,
 )
 role_style = ParagraphStyle(
-    "Role", fontName="Helvetica", fontSize=10.5, textColor=BLUE,
+    "Role", fontName="Helvetica", fontSize=10.5, textColor=ACCENT,
     leading=13, spaceAfter=5,
 )
 contact_style = ParagraphStyle(
@@ -46,7 +46,7 @@ contact_style = ParagraphStyle(
     leading=12, spaceAfter=0,
 )
 section_style = ParagraphStyle(
-    "Section", fontName="Helvetica-Bold", fontSize=10.8, textColor=BLUE,
+    "Section", fontName="Helvetica-Bold", fontSize=10.8, textColor=ACCENT,
     leading=13, spaceBefore=9, spaceAfter=4, alignment=TA_LEFT,
 )
 body_style = ParagraphStyle(
@@ -62,7 +62,7 @@ job_org_style = ParagraphStyle(
     leading=12, spaceAfter=5,
 )
 job_period_style = ParagraphStyle(
-    "JobPeriod", fontName="Helvetica-Bold", fontSize=9, textColor=BLUE,
+    "JobPeriod", fontName="Helvetica-Bold", fontSize=9, textColor=ACCENT,
     leading=13,
 )
 skill_style = ParagraphStyle(
