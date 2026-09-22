@@ -1,6 +1,6 @@
-# Abrar Portfolio — Local VS Code Prototype
+# Abrar Portfolio
 
-This is a static HTML/CSS/JavaScript portfolio prototype intended to be reviewed locally in VS Code before moving to GitHub and Vercel.
+A static HTML/CSS/JavaScript portfolio site, deployed via GitHub + Vercel.
 
 ## Run locally
 
@@ -13,17 +13,29 @@ A local URL such as `http://127.0.0.1:5500/` should open in your browser.
 
 ## File structure
 
-- `index.html` — page structure, dashboard navigation panel, lightbox markup
+- `index.html` — page structure, dashboard navigation panel, lightbox markup, SEO/social meta tags
 - `styles.css` — visual design, blue theme, layout, navigation, lightbox, responsive styles
 - `content.js` — portfolio text/content, social URLs, and image references
 - `script.js` — renders content and controls navigation + gallery lightbox
-- `assets/images/` — portfolio photos and project screenshots
+- `assets/images/` — portfolio photos and project screenshots (WebP)
+- `assets/meta/` — favicon, app icons, and the Open Graph/Twitter share image
+- `assets/Abrar-Naufal-Prasetya-CV.pdf` — downloadable CV, linked from the hero section
+- `scripts/generate_cv_pdf.py` — regenerates the downloadable CV PDF from `content.js`
+- `robots.txt`, `sitemap.xml` — basic SEO config (update the domain in both, plus in the `<head>` of `index.html`, if the production URL changes)
 
 ## Editing content
 
-Most text and links can be edited from `content.js` without changing the layout.
+Most text and links can be edited from `content.js` without changing the layout. If you update career/education/highlights, re-run `python3 scripts/generate_cv_pdf.py` (requires `pip install reportlab`) to keep the downloadable CV in sync.
 
-## Current revision notes — v0.5
+## Current revision notes — v0.6
+
+- Compressed all photos to WebP (~65% smaller) and added explicit `width`/`height` to every `<img>` to avoid layout shift.
+- Added Open Graph/Twitter Card meta tags, favicon/app icons, `<link rel="canonical">`, `robots.txt`, and `sitemap.xml`.
+- Added a "Download CV" button in the hero section, linking to an auto-generated PDF résumé.
+- Added a focus trap (Tab/Shift+Tab cycling) to the nav panel and lightbox overlays.
+- Footer year is now generated at runtime instead of hardcoded.
+
+## Previous revision notes — v0.5
 
 - Replaced the previous “Explore sections” dropdown with a compact dashboard-style Menu button and right-side navigation panel.
 - Gallery thumbnails are clickable and open a full-size lightbox without cropping the original photo.
@@ -31,5 +43,3 @@ Most text and links can be edited from `content.js` without changing the layout.
 - Contact/social buttons have a more engaging card treatment with hover interactions.
 - `@asnmedioker` now links directly to `https://tiktok.com/@asnmedioker`.
 - All prior revisions remain: full hero photo, readable formal typography, larger section headings, aligned gallery grid, updated Presentation 1 photo, and the blue hi-tech/playful visual theme.
-
-This version is still for local review only. GitHub and Vercel deployment should be done after final approval.
