@@ -187,7 +187,7 @@ window.PORTFOLIO = {
   },
 
   highlights: [
-    "2026 — LPDP Scholarship Candidate / Sponsored Applicant; Letter of Sponsorship for Master's applications to Tohoku University",
+    "2026 — LPDP Scholarship Candidate / Sponsored Applicant; Letter of Sponsorship for Master's applications to Tohoku University, Nagoya University, and Kyushu University",
     "2025 — Indonesian Agricultural and Rural Development Officials Capacity Building Workshop, Beijing",
     "2025 — 3rd Place, Ministry of Villages and Development of Disadvantaged Regions English Speech Contest",
     "2025 — Cybersecurity Awareness in Electronic-Based Government Systems — Digital Talent Scholarship",
