@@ -143,6 +143,50 @@ menuClose.addEventListener('click', () => {
 navBackdrop.addEventListener('click', () => setMenu(false));
 $$('.dashboard-nav a').forEach((link) => link.addEventListener('click', () => setMenu(false)));
 
+// Theme toggle (persisted; the inline <head> script sets the initial value before paint).
+const themeToggle = $('#themeToggle');
+function currentTheme() {
+  return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+}
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  try { localStorage.setItem('theme', theme); } catch (e) { /* ignore */ }
+  if (themeToggle) themeToggle.setAttribute('aria-pressed', String(theme === 'dark'));
+  const themeMeta = document.querySelector('meta[name="theme-color"]');
+  if (themeMeta) themeMeta.setAttribute('content', theme === 'dark' ? '#16130d' : '#f6f1e4');
+}
+if (themeToggle) {
+  themeToggle.setAttribute('aria-pressed', String(currentTheme() === 'dark'));
+  themeToggle.addEventListener('click', () => applyTheme(currentTheme() === 'dark' ? 'light' : 'dark'));
+}
+
+// Scrollspy: highlight the nav link for whichever section is currently in view.
+const dashboardNavLinks = $$('.dashboard-nav a');
+const spyMap = [
+  { href: '#top', el: $('.hero') },
+  { href: '#about', el: document.getElementById('about') },
+  { href: '#projects', el: document.getElementById('projects') },
+  { href: '#career', el: document.getElementById('career') },
+  { href: '#toolbox', el: document.getElementById('toolbox') },
+  { href: '#field-notes', el: document.getElementById('field-notes') },
+  { href: '#credentials', el: document.getElementById('credentials') },
+  { href: '#contact', el: document.getElementById('contact') },
+].filter((item) => item.el);
+
+if ('IntersectionObserver' in window && spyMap.length) {
+  const spyObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      const match = spyMap.find((item) => item.el === entry.target);
+      if (!match) return;
+      dashboardNavLinks.forEach((a) => a.classList.remove('active'));
+      const link = dashboardNavLinks.find((a) => a.getAttribute('href') === match.href);
+      if (link) link.classList.add('active');
+    });
+  }, { rootMargin: '-15% 0px -80% 0px', threshold: 0 });
+  spyMap.forEach((item) => spyObserver.observe(item.el));
+}
+
 // Gallery lightbox.
 const lightbox = $('#lightbox');
 const lightboxImage = $('#lightboxImage');
