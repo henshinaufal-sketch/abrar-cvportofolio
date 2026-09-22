@@ -28,7 +28,12 @@ A local URL such as `http://127.0.0.1:5500/` should open in your browser.
 
 Most text and links can be edited from `content.js` without changing the layout. If you update career/education/highlights, re-run `python3 scripts/generate_cv_pdf.py` (requires `pip install reportlab`) to keep the downloadable CV in sync.
 
-## Current revision notes — v0.8
+## Current revision notes — v0.9
+
+- Added a light/dark theme toggle (top-left of the topbar) that persists via `localStorage` and defaults to the visitor's OS preference on first visit; an inline script in `<head>` sets it before first paint to avoid a flash of the wrong theme.
+- Added scrollspy to the nav panel: the link for whichever section is currently in view gets highlighted as you scroll.
+
+## Previous revision notes — v0.8
 
 - Added scroll-reveal animations (fade + rise into view via `IntersectionObserver`) for section headings, cards, and other content below the hero, with a staggered cascade for grids/lists. Respects `prefers-reduced-motion`.
 
