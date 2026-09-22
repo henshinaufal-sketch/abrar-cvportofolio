@@ -37,6 +37,17 @@ img { max-width: 100%; display: block; }
 a, button { font-family: inherit; }
 h1, h2, h3, h4 { font-family: var(--font-heading); }
 
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .7s cubic-bezier(.2, .65, .3, 1), transform .7s cubic-bezier(.2, .65, .3, 1);
+  transition-delay: var(--reveal-delay, 0s);
+}
+.reveal.in-view { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { transition: none; opacity: 1; transform: none; }
+}
+
 .hero-name {
   margin-bottom: 18px;
   color: var(--ink);
