@@ -22,16 +22,16 @@ $('#stats').innerHTML = d.stats.map((item) => `
   </div>
 `).join('');
 
-$('#focus').innerHTML = d.focus.map((item) => `
-  <article class="focus-card">
+$('#focus').innerHTML = d.focus.map((item, index) => `
+  <article class="focus-card reveal" style="--reveal-delay: ${index * 0.08}s">
     <div class="n">${item.n}</div>
     <h3>${item.title}</h3>
     <p>${item.text}</p>
   </article>
 `).join('');
 
-$('#projectsGrid').innerHTML = d.projects.map((item) => `
-  <article class="project">
+$('#projectsGrid').innerHTML = d.projects.map((item, index) => `
+  <article class="project reveal" style="--reveal-delay: ${(index % 2) * 0.1}s">
     <figure class="project-media">
       <img src="${item.image}" alt="${item.imageAlt}" width="${item.imageWidth}" height="${item.imageHeight}" loading="lazy" />
     </figure>
@@ -47,8 +47,8 @@ $('#projectsGrid').innerHTML = d.projects.map((item) => `
   </article>
 `).join('');
 
-$('#careerList').innerHTML = d.career.map((item) => `
-  <div class="timeline-row">
+$('#careerList').innerHTML = d.career.map((item, index) => `
+  <div class="timeline-row reveal" style="--reveal-delay: ${index * 0.08}s">
     <time>${item.period}</time>
     <div>
       <h3>${item.title}</h3>
@@ -60,7 +60,7 @@ $('#careerList').innerHTML = d.career.map((item) => `
 $('#skills').innerHTML = d.skills.map((skill) => `<span class="skill">${skill}</span>`).join('');
 
 $('#gallery').innerHTML = d.gallery.map((item, index) => `
-  <figure class="gallery-card">
+  <figure class="gallery-card reveal" style="--reveal-delay: ${(index % 4) * 0.08}s">
     <button class="gallery-image-button" type="button" data-gallery-index="${index}" aria-label="Open ${item.title} photo">
       <span class="gallery-image"><img src="${item.image}" alt="${item.alt}" width="${item.imageWidth}" height="${item.imageHeight}" loading="lazy" /></span>
       <span class="gallery-view-hint" aria-hidden="true"><span>View photo</span><b>↗</b></span>
@@ -81,6 +81,21 @@ $('#education').innerHTML = `
 `;
 
 $('#highlights').innerHTML = d.highlights.map((item) => `<li>${item}</li>`).join('');
+
+// Fade/rise content into view as it's scrolled to, instead of showing everything at once.
+const revealEls = $$('.reveal');
+if ('IntersectionObserver' in window && revealEls.length) {
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('in-view');
+      revealObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
+  revealEls.forEach((el) => revealObserver.observe(el));
+} else {
+  revealEls.forEach((el) => el.classList.add('in-view'));
+}
 
 // Focus trap helper for the nav panel and lightbox overlays.
 function focusableElements(container) {

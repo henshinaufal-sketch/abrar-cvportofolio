@@ -28,7 +28,11 @@ A local URL such as `http://127.0.0.1:5500/` should open in your browser.
 
 Most text and links can be edited from `content.js` without changing the layout. If you update career/education/highlights, re-run `python3 scripts/generate_cv_pdf.py` (requires `pip install reportlab`) to keep the downloadable CV in sync.
 
-## Current revision notes — v0.7
+## Current revision notes — v0.8
+
+- Added scroll-reveal animations (fade + rise into view via `IntersectionObserver`) for section headings, cards, and other content below the hero, with a staggered cascade for grids/lists. Respects `prefers-reduced-motion`.
+
+## Previous revision notes — v0.7
 
 - Added a "Stack the Strata" mini-game (a Stack-style block-stacking game themed on the site's rock-strata palette), opened from a "Play mini-game" button in the footer.
 
