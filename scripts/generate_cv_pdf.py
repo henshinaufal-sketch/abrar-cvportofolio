@@ -160,7 +160,7 @@ story.append(Paragraph(" &nbsp;&bull;&nbsp; ".join(skills), skill_style))
 story.append(Paragraph("HIGHLIGHTS", section_style))
 highlights = [
     "2026 &mdash; LPDP Scholarship Candidate / Sponsored Applicant; Letter of Sponsorship for "
-    "Master&rsquo;s applications to Tohoku University",
+    "Master&rsquo;s applications to Tohoku University, Nagoya University, and Kyushu University",
     "2025 &mdash; Indonesian Agricultural and Rural Development Officials Capacity Building "
     "Workshop, Beijing",
     "2025 &mdash; 3rd Place, Ministry of Villages and Development of Disadvantaged Regions "
