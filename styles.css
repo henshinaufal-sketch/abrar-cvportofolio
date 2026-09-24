@@ -302,7 +302,15 @@ h1, h2, h3, h4 { font-family: var(--font-heading); }
 .dashboard-nav a.active span { color: var(--ochre); }
 .dashboard-nav a.active strong { color: var(--ochre); }
 .dashboard-nav a.active b { color: var(--ochre); }
-.dashboard-nav a span { font-family: var(--font-mono); color: var(--ochre); font-size: 12px; font-weight: 500; }
+.dashboard-nav a span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ochre);
+  transition: color .2s ease;
+}
+.dashboard-nav a span svg { width: 22px; height: 22px; }
+.dashboard-nav a:hover span { color: var(--rust); }
 .dashboard-nav a strong { font-size: 15px; line-height: 1.25; font-weight: 700; }
 .dashboard-nav a b { color: rgba(255,255,255,.52); font-size: 15px; font-weight: 500; transition: color .2s ease, transform .2s ease; }
 .dashboard-nav a:hover b { color: var(--ochre); transform: translate(2px, 2px); }
