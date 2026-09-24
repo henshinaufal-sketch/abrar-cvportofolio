@@ -169,6 +169,7 @@ const spyMap = [
   { href: '#career', el: document.getElementById('career') },
   { href: '#toolbox', el: document.getElementById('toolbox') },
   { href: '#field-notes', el: document.getElementById('field-notes') },
+  { href: '#video', el: document.getElementById('video') },
   { href: '#credentials', el: document.getElementById('credentials') },
   { href: '#contact', el: document.getElementById('contact') },
 ].filter((item) => item.el);

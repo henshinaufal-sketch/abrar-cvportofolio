@@ -28,7 +28,12 @@ A local URL such as `http://127.0.0.1:5500/` should open in your browser.
 
 Most text and links can be edited from `content.js` without changing the layout. If you update career/education/highlights, re-run `python3 scripts/generate_cv_pdf.py` (requires `pip install reportlab`) to keep the downloadable CV in sync.
 
-## Current revision notes — v0.9
+## Current revision notes — v0.10
+
+- Added a "Video Log" section (06) between Field Notes and Education/Highlights, embedding the YouTube channel's uploads playlist (`https://www.youtube.com/channel/UCXqE7pz112HeU4PJ-rBi1LQ`) via `youtube-nocookie.com`, plus a "Visit the channel" link. To point this at a different channel, swap the `list=` value in `index.html`'s `.video-embed iframe` — it's the channel ID with its `UC` prefix replaced by `UU` (every channel's uploads are auto-collected into that playlist).
+- Fixed the mini-game/lightbox/nav overlays occasionally staying click-blocking after close in some browsers (`pointer-events: none` added to their closed state).
+
+## Previous revision notes — v0.9
 
 - Added a light/dark theme toggle (top-left of the topbar) that persists via `localStorage` and defaults to the visitor's OS preference on first visit; an inline script in `<head>` sets it before first paint to avoid a flash of the wrong theme.
 - Added scrollspy to the nav panel: the link for whichever section is currently in view gets highlighted as you scroll.
